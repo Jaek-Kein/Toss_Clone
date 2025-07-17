@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import styled from "@emotion/styled";
-import useDataStore from "../../../Store/useDataStore";
+import { RiBankCard2Fill } from "react-icons/ri";
+import { TossBlue } from "../../../Style/color";
 import { 공통애니메이션 } from "../공통애니메이션";
 
 const Wrapper = styled.div`
@@ -21,6 +22,11 @@ const Wrapper = styled.div`
 
     font-family: Noto Sans KR;
 
+    &:active{
+        transform: scale(0.95);
+        background-color: #0064FF26;
+        transition: transform 0.2s ease-in-out;
+    }
 `
 
 const LogoArea = styled.div`
@@ -40,57 +46,41 @@ const LogoArea = styled.div`
     }
 `
 
-const BalanceAndExplanation = styled.div`
+const AllBank = styled.div`
     display: grid;
     grid-template-rows: 1fr 1fr;
     height: 40px;
 `
 
-const Balance = styled.div`
+const AllAccount = styled.div`
     font-weight: bold;
     font-size: 1rem;
 `
 
-const AccountDomain = styled.div`
+const SeeAll = styled.div`
     font-size: 0.75rem;
     color: #292929;
 `
 
-const SendMoney = styled.button`
-    font-size: 0.75rem;
-    color: #292929;
 
-    background-color: #e2e2e2;
-    pointer-events: auto;
-`
-
-function TossBankInfo () {
-    const { TossBank } = useDataStore();
-
-    const handle송금Click = (e: React.MouseEvent) => {
-        e.preventDefault();
-        e.stopPropagation();
-        alert("송금 클릭")
-    }
+function AllBankInfo () {
 
     return (
         <Wrapper css={공통애니메이션}>
             <LogoArea>
-                <img src="Toss_App_Icon.png"/>
+                <RiBankCard2Fill color={TossBlue} size='25px'/>
             </LogoArea>
-            <BalanceAndExplanation>
-                <Balance>
-                    {TossBank.Balance.toLocaleString() } 원
-                </Balance>
-                <AccountDomain>
-                    토스뱅크 통장 · 주계좌
-                </AccountDomain>
-            </BalanceAndExplanation>
-            <SendMoney onClick={handle송금Click}>
-                송금
-            </SendMoney>
+            <AllBank>
+                <AllAccount>
+                    내 모든 계좌
+                </AllAccount>
+                <SeeAll>
+                    전체보기
+                </SeeAll>
+                <div></div>
+            </AllBank>
         </Wrapper>
     )
 }
 
-export default TossBankInfo;
+export default AllBankInfo;

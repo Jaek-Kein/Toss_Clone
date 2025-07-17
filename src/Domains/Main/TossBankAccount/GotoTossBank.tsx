@@ -1,4 +1,6 @@
+/** @jsxImportSource @emotion/react */
 import styled from "@emotion/styled";
+import { 공통애니메이션 } from "../공통애니메이션";
 
 const Wrapper = styled.div`
   display: flex;
@@ -6,18 +8,14 @@ const Wrapper = styled.div`
   font-size: 0.75rem;
   padding: 3% 5%;
   border-radius: 10px;
-  &:active {
-    transform: scale(0.95);
-    background-color: #00000013;
-    transition: transform 0.2s ease-in-out;
-  }
+
 `;
 
 const Chevron = ">";
 
 function GotoTossBank() {
   return (
-    <Wrapper>
+    <Wrapper css={공통애니메이션}>
       내 토스뱅크
       <div>{Chevron}</div>
     </Wrapper>

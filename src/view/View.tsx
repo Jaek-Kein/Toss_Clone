@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { BackgroundDark } from "../Style/color";
 import TossBankIndex from "../Domains/Main/TossBankAccount/TossBankIndex";
 import TopBar from "../Domains/Main/TopBar/TopBar";
+import AllBankIndex from "../Domains/Main/AllBankAccount/AllBankIndex";
 
 
 const Wallpaper = styled.div`
@@ -12,6 +13,9 @@ const Wallpaper = styled.div`
     padding: 2% 3%;
 
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 `
 
 const View:React.FC = () => {
@@ -19,6 +23,7 @@ const View:React.FC = () => {
         <Wallpaper>
             <TopBar />
             <TossBankIndex/>
+            <AllBankIndex/>
         </Wallpaper>
     )
 }

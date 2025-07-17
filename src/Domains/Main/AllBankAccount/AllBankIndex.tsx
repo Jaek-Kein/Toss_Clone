@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
-import GotoTossBank from "./GotoTossBank";
 import 단일콘텐츠Wrapper from "../단일콘텐츠Wrapper";
-import TossBankInfo from "./TossBankInfo";
+import AllBankInfo from "./AllBankInfo";
+import AllBankMenu from "./AllBankMenu";
 import { CommonDivider } from "../CommonDivider";
 
 const Wrapper = styled.div`
@@ -9,16 +9,16 @@ const Wrapper = styled.div`
   overflow: hidden;
 `;
 
-function TossBankIndex() {
+function AllBankIndex() {
   return (
     <Wrapper>
       <단일콘텐츠Wrapper>
-        <TossBankInfo />
+        <AllBankInfo />
         <CommonDivider />
-        <GotoTossBank />
+        <AllBankMenu />
       </단일콘텐츠Wrapper>
     </Wrapper>
   );
 }
 
-export default TossBankIndex;
+export default AllBankIndex;
